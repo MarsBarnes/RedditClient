@@ -61,7 +61,6 @@ export const SearchAndFilter = () => {
       <button
         type="button"
         onClick={() => {
-          // dispatch(filter());
           filterOn ? setFilterOn(false) : setFilterOn(true);
         }}
       >

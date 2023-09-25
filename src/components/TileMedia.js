@@ -42,7 +42,6 @@ export const TileMedia = ({ i }) => {
         imageUrls.push(item.p[0].u);
       }
     });
-    // console.log(i.data.title + imageUrls);
     return (
       <div className="tileImage">
         <Carousel imageUrls={imageUrls}></Carousel>
@@ -50,7 +49,7 @@ export const TileMedia = ({ i }) => {
     );
   }
 
-  // // single IMAGES BY RESOLUTION
+  // SINGLE IMAGES BY RESOLUTION
   if (i.data.preview?.enabled) {
     if (i.data.preview.images[0].resolutions[3]?.url.replace(/&amp;/g, "&")) {
       return (

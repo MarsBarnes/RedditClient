@@ -20,7 +20,6 @@ const initialState = {
 export const fetchData = createAsyncThunk(
   "slice/fetchBySearchQuery",
   async (anUnusedVariable, thunkAPI) => {
-    // console.log("yeeyee");
     const res = await fetch(
       `https://www.reddit.com/r/${thunkAPI.getState().searchText}.json`
     );
@@ -39,15 +38,10 @@ export const fetchComments = createAsyncThunk(
     const article = thunkAPI.getState().postData[i];
     console.log(`fetch comments article: ${article.data.id}`);
     const res = await fetch(
-      // get article title
-      // `https://api.reddit.com/r/${thunkAPI.getState().searchText}/comments/${
-      //   thunkAPI.getState().postData[i].data.id
-      // }`
       `https://www.reddit.com${article.data.permalink.replace(/\/$/, "")}.json`
     );
     console.log(thunkAPI.getState());
     if (res.ok) {
-      // console.log("wooohooo");
       return res.json();
     } else {
       throw new Error(res.status);
@@ -60,11 +54,7 @@ export const slice = createSlice({
   initialState,
   reducers: {
     search: (state, action) => {
-      // console.log(action.payload);
       state.searchText = action.payload;
-      // console.log("search action reached");
-      // console.log(action);
-      // console.log(state.searchText);
     },
     setSlideWidth: (state, action) => {
       state.slideWidth = action.payload;
@@ -133,7 +123,6 @@ export const slice = createSlice({
       })
       .addCase(fetchData.fulfilled, (state, action) => {
         state.loading = false;
-        // console.log(action);
         state.postData = action.payload.data.children;
         state.filteredPostData = action.payload.data.children;
       })

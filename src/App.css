@@ -32,7 +32,6 @@ img {
 }
 
 /* SEARCH AND FILTER STYLES */
-
 .searchAndFilterFlex {
   display: grid;
   grid-template-columns: 10fr 1fr 1fr 1fr 1fr 1fr;
@@ -41,7 +40,6 @@ img {
     "header header header searchBar search filterIcon"
     "filter filter filter filter filter filter";
   width: 500px;
-  /* height: 100px; */
   background-color: #4717f6;
   border-bottom: #a239ca;
   border-width: 5px;
@@ -51,8 +49,6 @@ img {
 .searchAndFilterOff {
   grid-template-rows: 1fr 0px;
 }
-
-
 
 .searchAndFilterHeader {
   grid-area: header;
@@ -89,10 +85,6 @@ img {
 }
 
 /* TILE STYLES */
-
-/* img {
-  width: 300px;
-} */
 
 .tile {
   background-color: #0d042b;
@@ -159,13 +151,11 @@ img {
 /* CAROUSEL STYLING */
 
 .slider-wrapper {
-  /* margin: 1rem; */
   position: relative;
   overflow: hidden;
 }
 
 .slides-container {
-  /* height: calc(100vh - 2rem); */
   width: 100%;
   display: flex;
   overflow: scroll;
@@ -282,6 +272,35 @@ a:active {
   color: #e7dfdd;
   text-decoration: none;
   background-color: transparent;
+}
+
+/* BUTTON LINK STYLES */
+.flex{
+  display: flex;
+}
+
+.links {
+  padding: 10px 20px;
+  text-decoration: none !important;
+  border: none;
+  cursor: pointer;
+  font-size: 16px;
+  margin: 10px;
+  background-color: #a239ca !important;
+  color: #e7dfdd !important;
+  border-radius: 10px;
+}
+
+.links:hover {
+  padding: 10px 20px;
+  text-decoration: none !important;
+  border: none;
+  cursor: pointer;
+  font-size: 16px;
+  margin: 10px;
+  background-color: #4717f6 !important;
+  color: #e7dfdd !important;
+  border-radius: 10px;
 }
 
 /* RESPONSIVITY */
