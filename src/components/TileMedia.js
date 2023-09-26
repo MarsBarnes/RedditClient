@@ -1,4 +1,11 @@
+import * as DOMPurify from "dompurify";
 import Carousel from "./Carousel";
+
+function decodeHTMLEntities(text) {
+  var textArea = document.createElement("textarea");
+  textArea.innerHTML = text;
+  return textArea.value;
+}
 
 export const TileMedia = ({ i }) => {
   // VIDEO
@@ -17,7 +24,14 @@ export const TileMedia = ({ i }) => {
   }
   // TEXT POST
   if (i.data.is_self) {
-    return <p className="tileImage">{i.data.selftext_html}</p>;
+    return (
+      <p
+        className="tileImage"
+        dangerouslySetInnerHTML={{
+          __html: DOMPurify.sanitize(decodeHTMLEntities(i.data.selftext_html)),
+        }}
+      />
+    );
   }
   // NSFW POST
   if (i.data.thumbnail === "nsfw") {
