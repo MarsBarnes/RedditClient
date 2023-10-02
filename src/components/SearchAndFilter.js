@@ -20,7 +20,7 @@ export const SearchAndFilter = () => {
   const textChecked = useSelector(selectTextChecked);
   const filter = useSelector(selectFilter);
   const dispatch = useDispatch();
-  const [textInput, setTextInput] = React.useState("");
+  const [textInput, setTextInput] = React.useState("art");
   const [filterOn, setFilterOn] = React.useState(false);
 
   const handleKeyDown = (event) => {
